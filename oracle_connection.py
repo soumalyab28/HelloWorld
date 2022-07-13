@@ -1,9 +1,6 @@
 import cx_Oracle
 
-connection = cx_Oracle.connect(
-    user="soum",
-    password="soum",
-    dsn="localhost/xepdb1")
+connection = cx_Oracle.connect(user="soum",password="soum",dsn="localhost/xepdb1")
 
 print("Successfully connected to Oracle Database")
 
@@ -37,6 +34,7 @@ cursor.executemany("insert into todoitem (description, done) values(:1, :2)", ro
 print(cursor.rowcount, "Rows Inserted")
 
 connection.commit()
+
 
 # Now query the rows back
 for row in cursor.execute('select description, done from todoitem'):
