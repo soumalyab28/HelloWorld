@@ -10,11 +10,11 @@ def clear():
         _ = system('cls')
 #Call the randint method from the random package and randomly select a number between 1 and 50 
 #And assign it to num variable
-num = random.randint(1,50)
+num = random.randint(10,50)
 
 flag = 101
-guess_cnt = 1
-print(num)
+guess_cnt = 0
+#print(num)
 
 print("\n")
 print("----------------------------------------------------")
@@ -33,7 +33,7 @@ print("\n")
 
 while flag == 101:
     guess = int(input("Please guess a number between 1 and 50 :   "))
-    guess_prev = guess
+    guess_cnt+= 1
     if guess < 0 or guess > 50:
         print("Out of Bounds.. Please enter a number between 1 and 50 ")
         flag = 101
@@ -48,26 +48,38 @@ while flag == 101:
     if num > guess:
         if ((num - guess) <= 5):
             if guess_cnt == 1:
-                print("WARMER")
-                guess_cnt+= 1
+                print("WARM")              
             elif guess_cnt > 1:
                 if guess < guess_prev:
                     print("COLDER")
-                    guess_cnt+= 1
                 elif guess > guess_prev:
                     print("WARMER")
-                    guess_cnt+= 1
         elif ((num - guess) > 5):
             if guess_cnt == 1:
-                print("COLDER")
-                guess_cnt+= 1
+                print("COLD")
             elif guess_cnt > 1:
-                if guess > guess_prev:
-                    print("WARMER")
-                    guess_cnt+=1
-                elif guess < guess_prev:
+                if guess < guess_prev:
                     print("COLDER")
-                    guess_cnt+= 1
+                elif guess > guess_prev:
+                    print("WARMER")
+    if num < guess:
+        if ((guess - num) <= 5):
+            if guess_cnt == 1:
+                print("WARM")              
+            elif guess_cnt > 1:
+                if guess < guess_prev:
+                    print("WARMER")
+                elif guess > guess_prev:
+                    print("COLDER")
+        elif ((guess - num) > 5):
+            if guess_cnt == 1:
+                print("COLD")
+            elif guess_cnt > 1:
+                if guess < guess_prev:
+                    print("WARMER")
+                elif guess > guess_prev:
+                    print("COLDER")
+    guess_prev = guess
 
     
 
