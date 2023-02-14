@@ -1,4 +1,3 @@
-
 # import only system from os -- this is only for executing the Clear screen funtionality
 import random
 from os import system, name
@@ -68,35 +67,35 @@ while flag == 101:
 # Alternate soluation using Lists
 # Hint: zero is a good placeholder value. It's useful because it evaluates to "False".
 # So we create a list with just 0 element in it
-# guesses = [0]
-# while True:
+ guesses = [0]
+ while True:
 
-#     # we can copy the code from above to take an input
-#     guess = int(input("I'm thinking of a number between 1 and 100.\n  What is your guess? "))
-    
-#     if guess < 1 or guess > 100:
-#         print('OUT OF BOUNDS! Please try again: ')
-#         continue
-    
-#     # here we compare the player's guess to our number
-#     if guess == num:
-#         print(f'CONGRATULATIONS, YOU GUESSED IT IN ONLY {len(guesses)} GUESSES!!')
-#         break
-        
-#     # if guess is incorrect, add guess to the list
-#     guesses.append(guess)
-    
-#     # when testing the first guess, guesses[-2]==0, which evaluates to False
-#     # and brings us down to the second section
-    
-#     if guesses[-2]:  
-#         if abs(num-guess) < abs(num-guesses[-2]):
-#             print('WARMER!')
-#         else:
-#             print('COLDER!')
+     # we can copy the code from above to take an input
+     guess = int(input("I'm thinking of a number between 1 and 100.\n  What is your guess? "))
    
-#     else:
-#         if abs(num-guess) <= 10:
-#             print('WARM!')
-#         else:
-#             print('COLD!')
+     if guess < 1 or guess > 100:
+         print('OUT OF BOUNDS! Please try again: ')
+         continue
+   
+     # here we compare the player's guess to our number
+     if guess == num:
+         print(f'CONGRATULATIONS, YOU GUESSED IT IN ONLY {len(guesses)} GUESSES!!')
+         break
+       
+     # if guess is incorrect, add guess to the list
+     guesses.append(guess)
+   
+     # when testing the first guess, guesses[-2]==0, which evaluates to False
+     # and brings us down to the second section
+   
+     if guesses[-2]:  
+         if abs(num-guess) < abs(num-guesses[-2]):
+             print('WARMER!')
+         else:
+             print('COLDER!')
+  
+     else:
+         if abs(num-guess) <= 10:
+             print('WARM!')
+         else:
+             print('COLD!')

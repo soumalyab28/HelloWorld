@@ -41,7 +41,7 @@ print(cursor.rowcount, "Rows Inserted")
 connection.commit()
 
 
-Now query the rows back
+#Now query the rows back
 for row in cursor.execute('select First_Name, Last_name from CUStomer'):
     table.append(row)
 

@@ -7,7 +7,7 @@ def fibonacci(limit):
     b = 1
     i = 0
 
-    while i < 10:
+    while i < (limit - 1):
         sum = sum_num(a,b)  # Get the sum from the function created above
         a = b               # Assign the 2nd num to 1st num
         b = sum             # The sum becomes the 2nd num for next iteration
@@ -19,3 +19,14 @@ def fibonacci(limit):
 #     my_list[val] = fibonacci(10)
 
 # print(my_list)
+
+
+# Creation of Fibonacci series using Recursion
+def fibonacci_rec(limit):
+    if limit < 2:
+        return 1
+    return (fibonacci_rec(limit - 1) + fibonacci_rec(limit - 2))
+
+n = int(input("Enter the number of terms : "))
+for i in range(n):
+    print("Fibonacci (", i , ") = " , fibonacci_rec(i))
