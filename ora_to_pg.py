@@ -10,6 +10,8 @@ cur_pg = con_pg.cursor()
 connection_dest = oracledb.connect(user="soum",password="soum",dsn="localhost/xepdb1")
 cursor_dest = connection_dest.cursor()
 
+pool = oracledb.SessionPool
+
 cursor_dest.execute('select count(*) from employees')
 row_cnt_oracle = cursor_dest.fetchall()
 
